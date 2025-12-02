@@ -8,7 +8,7 @@ this short python script allows you to search your ao3 history for the top stats
     - make sure you change all the backslashes to forward slashes 
     - "C:\Users\me\Documents\ao3_expanded1.xlsx" becomes "C:/Users/me/Documents/ao3_expanded1.xlsx"
 - run the script!
-- 
+  
 ## Dependencies
 the script does require you to have python installed on your device, if it isn't it can be installed here.
 

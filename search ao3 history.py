@@ -1,5 +1,5 @@
 import pandas as pd
-ao3History = pd.read_excel("C:/Users/lia/Documents/ao3_expanded1.xlsx")
+ao3History = pd.read_excel("change this to your ao3historyspreadsheet filepath")
 
 print(ao3History.columns)
 print("enter column to be searched: ")
@@ -7,7 +7,6 @@ column = input()
 print("enter top amount to be searched: ")
 topAmount = input()
 topAmount = int(topAmount)
-
 
 def searchHistory(column, topAmount):
     values = ao3History[column].values
@@ -48,6 +47,4 @@ def searchHistory(column, topAmount):
         else:
             print("thanks for searching :)")
 
-
 searchHistory(column, topAmount)
-    

@@ -3,6 +3,9 @@ ao3History = pd.read_excel("c:/Users/lhara/Documents/ao3_expanded1.xlsx", thousa
 
 ao3History["wordcount"].astype(float)
 
+totalWordcount = ao3History["wordcount"].sum()
+print("total wordcount =", totalWordcount)
+
 print(ao3History.columns)
 print("enter column to be searched: ")
 column = input()
@@ -11,6 +14,8 @@ topAmount = input()
 topAmount = int(topAmount)
 
 def searchHistory(column, topAmount):
+
+
     values = ao3History[column].values
     toSearch = pd.Series(values)
     result = toSearch.value_counts()
@@ -48,5 +53,6 @@ def searchHistory(column, topAmount):
             searchHistory(column, newTopAmount)
         else:
             print("thanks for searching :)")
+
 
 searchHistory(column, topAmount)

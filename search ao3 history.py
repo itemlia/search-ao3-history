@@ -1,5 +1,7 @@
 import pandas as pd
-ao3History = pd.read_excel("change this to your ao3historyspreadsheet filepath")
+ao3History = pd.read_excel("c:/Users/lhara/Documents/ao3_expanded1.xlsx", thousands=',')
+
+ao3History["wordcount"].astype(float)
 
 print(ao3History.columns)
 print("enter column to be searched: ")

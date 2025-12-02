@@ -8,17 +8,46 @@ print("enter top amount to be searched: ")
 topAmount = input()
 topAmount = int(topAmount)
 
+
 def searchHistory(column, topAmount):
     values = ao3History[column].values
     toSearch = pd.Series(values)
     result = toSearch.value_counts()
-    k=topAmount
+    k = topAmount
     top = result.head(k)
-    print(top)
 
-    print("enter new column to be searched: ")
-    newColumn = input()
+    if k > len(result):
+        print("top amount value too large please enter new one: ")
+        topAmountRedo = input()
+        topAmountRedo = int(topAmountRedo)
+        searchHistory(column, topAmountRedo)
+    else:
+        print(top)
 
-    searchHistory(newColumn, topAmount)
+    print("would you like to search a new column?")
+    answer = input()
+
+    if answer == "yes":
+        print("enter new column to be searched: ")
+        newColumn = input()
+        print("would you like to search a new top amount?")
+        answer2 = input()
+        if answer2 == "yes":
+            print("enter new top amount to be searched: ")
+            newTopAmount = input()
+            searchHistory(newColumn, newTopAmount)
+        else:
+            searchHistory(newColumn, topAmount)
+    else:
+        print("would you like to search a new top amount?")
+        answer3 = input()
+        if answer3 == "yes":
+            print("enter new top amount to be searched: ")
+            newTopAmount = input()
+            searchHistory(column, newTopAmount)
+        else:
+            print("thanks for searching :)")
+
 
 searchHistory(column, topAmount)
+    

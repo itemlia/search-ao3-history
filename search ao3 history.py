@@ -5,6 +5,8 @@ global gTopOrBottom
 
 global sort
 
+ao3History.dropna(inplace=True)
+
 ao3History["wordcount"].astype(float)
 
 totalWordcount = ao3History["wordcount"].sum()
@@ -67,6 +69,7 @@ def wordcountAscending():
     else:
         print("not a valid answer - please retype: ")
         answer0 = input()
+    
     
     values = sortedHistory["wordcount"].values
     result = pd.Series(values)

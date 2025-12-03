@@ -65,11 +65,7 @@ def wordcountAscending():
         print("enter amount to be searched: ")
         topAmount = input()
         topAmount = int(topAmount)
-        topOrBottom = 0
-    else:
-        print("not a valid answer - please retype: ")
-        answer0 = input()
-    
+        topOrBottom = 0    
     
     values = sortedHistory["wordcount"].values
     result = pd.Series(values)
@@ -80,14 +76,6 @@ def wordcountAscending():
         top = result.head(k)
     else:
         top = result.tail(k)
-
-    # if k > len(result):
-    #     print("top amount value too large please enter new one: ")
-    #     topAmountRedo = input()
-    #     topAmountRedo = int(topAmountRedo)
-    #     searchHistory(column, topAmountRedo)
-    # else:
-    #     print(top)
 
     print(top)
 
@@ -120,10 +108,6 @@ def checkSort():
         topAmount = int(topAmount)
         gTopOrBottom = 0
         searchHistory(column, topAmount)
-    else:
-        print("not a valid answer - please retype: ")
-        answer0 = input()
-
 
 if column == "wordcount":
     print("would you like to order wordcount in descending numerical order?")

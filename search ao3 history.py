@@ -1,7 +1,7 @@
 import pandas as pd
-ao3History = pd.read_excel("c:/Users/lhara/Documents/ao3_expanded1.xlsx", thousands=',')
+ao3History = pd.read_excel("c:/Users/lia/Documents/ao3_expanded1.xlsx", thousands=',')
 
-global topOrBottom
+global gTopOrBottom
 
 global sort
 
@@ -23,7 +23,7 @@ def searchHistory(column, topAmount):
     result = toSearch.value_counts()
     k = topAmount
 
-    if topOrBottom == 1:
+    if gTopOrBottom == 1:
         top = result.head(k)
     else:
         top = result.tail(k)
@@ -44,10 +44,13 @@ def searchHistory(column, topAmount):
         newColumn = input()
         searchHistory(newColumn, topAmount)
     else:
-        print("thanks for searching :)")
+        print("thanks for searching!")
 
 
 def wordcountAscending():
+
+    sortedHistory = ao3History.sort_values(by='wordcount',ascending=False)
+
     print("would you like to search top amounts or bottom amounts?")
     answer0 = input()
 
@@ -65,7 +68,7 @@ def wordcountAscending():
         print("not a valid answer - please retype: ")
         answer0 = input()
     
-    values = ao3History["wordcount"].sort_values
+    values = sortedHistory["wordcount"].values
     result = pd.Series(values)
     
     k = topAmount
@@ -75,13 +78,15 @@ def wordcountAscending():
     else:
         top = result.tail(k)
 
-    if k > len(result):
-        print("top amount value too large please enter new one: ")
-        topAmountRedo = input()
-        topAmountRedo = int(topAmountRedo)
-        searchHistory(column, topAmountRedo)
-    else:
-        print(top)
+    # if k > len(result):
+    #     print("top amount value too large please enter new one: ")
+    #     topAmountRedo = input()
+    #     topAmountRedo = int(topAmountRedo)
+    #     searchHistory(column, topAmountRedo)
+    # else:
+    #     print(top)
+
+    print(top)
 
     print("would you like to search a new column?")
     answer = input()
@@ -91,10 +96,12 @@ def wordcountAscending():
         newColumn = input()
         searchHistory(newColumn, topAmount)
     else:
-        print("thanks for searching :)")
+        print("thanks for searching!")
 
 
 def checkSort():
+    global gTopOrBottom
+
     print("would you like to search top amounts or bottom amounts?")
     answer0 = input()
 
@@ -102,13 +109,13 @@ def checkSort():
         print("enter amount to be searched: ")
         topAmount = input()
         topAmount = int(topAmount)
-        topOrBottom = 1
+        gTopOrBottom = 1
         searchHistory(column, topAmount)
     elif answer0 == "bottom":
         print("enter amount to be searched: ")
         topAmount = input()
         topAmount = int(topAmount)
-        topOrBottom = 0
+        gTopOrBottom = 0
         searchHistory(column, topAmount)
     else:
         print("not a valid answer - please retype: ")
@@ -116,7 +123,7 @@ def checkSort():
 
 
 if column == "wordcount":
-    print("would you like to order wordcount in ascending order?")
+    print("would you like to order wordcount in descending numerical order?")
     answer00 = input()
     if answer00 == "yes":
         wordcountAscending()

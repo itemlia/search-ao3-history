@@ -1,8 +1,7 @@
-<img src = "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
-<img src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white">
-
 # AO3 History Search
 this short python script allows you to search your ao3 history for the top stats of any of the provided filters - author, wordcount, fic title, relationship, fandom, rating, warning, viewed, posted, and catagory
+
+<img src = "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"> <img src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white">
 
 ## How to use
 - scrape your ao3 history using the info from [this reddit post](https://www.reddit.com/r/AO3/comments/zu9f5a/ao3_wrapped_history_spreadsheet_how_to_rip_your/)

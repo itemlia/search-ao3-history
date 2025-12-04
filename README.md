@@ -10,7 +10,18 @@ this short python script allows you to search your ao3 history for the top stats
     - make sure you change all the backslashes to forward slashes 
     - "C:\Users\me\Documents\ao3_expanded1.xlsx" becomes "C:/Users/me/Documents/ao3_expanded1.xlsx"
 - run the script!
-  
+
+## Features
+this script allows you to:
+- look at top-most and bottom-most:
+   - authors
+   - fics
+   - relationship pairings
+   - fandoms
+   - days read
+- sort word count in descending order
+- filter fic stats by year
+
 ## Dependencies
 the script does require you to have python installed on your device, if it isn't it can be installed [here](https://www.python.org/downloads/).
 

@@ -9,10 +9,28 @@ ao3History.dropna(inplace=True)
 
 ao3History["wordcount"].astype(float)
 
+
+
 totalWordcount = ao3History["wordcount"].sum()
 print("total wordcount =", totalWordcount)
 
 print(ao3History.columns)
+
+
+print("would you like to search a specific year?")
+yearAnswer = input()
+
+def searchDate():
+    print("what year would you like to search?")
+    year = input()
+
+    searchYear = pd.DataFrame(data = ao3History[ao3History["viewed"].str.contains(year)])
+
+    return searchYear
+
+if yearAnswer == "yes":
+    ao3History = searchDate()
+
 print("enter column to be searched: ")
 column = input()
 
@@ -79,15 +97,8 @@ def wordcountAscending():
 
     print(top)
 
-    print("would you like to search a new column?")
-    answer = input()
-
-    if answer == "yes":
-        print("please enter a new column: ")
-        newColumn = input()
-        searchHistory(newColumn, topAmount)
-    else:
-        print("thanks for searching!")
+    
+    print("thanks for searching!")
 
 
 def checkSort():
@@ -108,6 +119,7 @@ def checkSort():
         topAmount = int(topAmount)
         gTopOrBottom = 0
         searchHistory(column, topAmount)
+
 
 if column == "wordcount":
     print("would you like to order wordcount in descending numerical order?")

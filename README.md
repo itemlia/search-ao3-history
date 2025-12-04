@@ -12,7 +12,7 @@ this short python script allows you to search your ao3 history for the top stats
 - run the script!
   
 ## Dependencies
-the script does require you to have python installed on your device, if it isn't it can be installed here.
+the script does require you to have python installed on your device, if it isn't it can be installed [here](https://www.python.org/downloads/).
 
 the script also needs the following python addons:
 - [pip](https://pypi.org/project/pip/)

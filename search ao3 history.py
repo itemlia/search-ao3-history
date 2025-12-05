@@ -1,5 +1,5 @@
 import pandas as pd
-ao3History = pd.read_excel("c:/Users/lia/Documents/ao3_expanded1.xlsx", thousands=',')
+ao3History = pd.read_excel("change this to your ao3 history spreadsheet filepath", thousands=',')
 
 global gTopOrBottom
 
